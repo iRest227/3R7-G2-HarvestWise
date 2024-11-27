@@ -7,10 +7,17 @@ const homepage = () => {
 
   useEffect(() => {
      const fetchHarvest = async () => {
+        const { data, error} = await supabase
+         .from('harvest')
+         .select()
 
+         if(error) {
+            setFetchError()
+            
+         }
      }
-    }
-    },[])
+
+    }, [])
 
   return(
     <div className ="Home Page">
